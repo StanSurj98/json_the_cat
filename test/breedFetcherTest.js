@@ -13,7 +13,19 @@ describe('#fetchBreedDescription', () => {
       // compare the actual returned descriptions
       assert.equal(expectDesc, desc.trim());
 
-      done();
-    })
-  })
+      done(); // gotta do these for asyncs or else it times out
+    });
+  });
+
+  it('returns string describing breed description doesn\'t exist', (done) => {
+    fetchBreedDescription('asd;fahds;fal', (err, desc) => {
+      // again, expecting no error
+      assert.equal(err, null);
+
+      const expectedDesc = "The breed you're looking for doesn't exist.";
+      assert.equal(expectedDesc, desc.trim());
+
+      done(); // gotta do these for asyncs or else it times out
+    });
+  });
 });

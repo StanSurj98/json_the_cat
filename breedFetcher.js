@@ -18,12 +18,12 @@ const fetchBreedDescription = (breed, cb) => {
       if (data.length === 0) {
         return cb(null, 'The breed you\'re looking for doesn\' exist.'); // if data empty...
       } else {
-        return cb(null, data[0]["description"]) // do cb with the description
+        return cb(null, data[0]["description"]); // do cb with the description
       }
       // *** REMEMBER ***
       // In index.js our callback(ARG ONE, ARG TWO), so we have to fill it here if we're returned error as null
       // WE CANNOT just say cb(body) or else it will count body as the "error" parameter but obviously we're just logging it, so we just get a log of the body
-      // MUST look like this=> return cb(null, body); 
+      // MUST look like this=> return cb(null, body);
     }
   });
 };

@@ -9,5 +9,5 @@ fetchBreedDescription(breedName, (error, description) => {
   // if there was an error, we would run the cb here with error as its args
   if (error) console.log(`${error}`);
 
-  if (description) console.log(`Description: ${description}`)
+  if (description) console.log(`Description: ${description}`);
 });
